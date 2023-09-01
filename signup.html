@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap-5.3.1-dist/css/bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;1,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="header.css">
+    <link rel="stylesheet" type="text/css" href="background.css">
+    <link rel="stylesheet" type="text/css" href="upload.css">
+
+
+    <title>SignUp page</title>
+
+    <script>
+        function handleFileInput() {
+            const fileInput = document.getElementById('fileInput');
+            fileInput.click();
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <p class="join-text">Register Today and Join Us</p>
+            <p class="title">Congratulations on joining the bigger family</p>
+        </div>
+        <div>
+            <a href="landing_page.html">
+                <img class="logo" src="Img/ktu_logo1.png" alt="Logo">
+            </a>
+            
+        </div>
+    </div>
+    
+    <form class="registration-form" enctype="multipart/form-data">
+
+        <div class="form-section">
+            <h2 class="section-title" style="font-size: 25px; margin-left: 30px;">
+                <span style="text-decoration: underline; text-decoration-color: rgb(10, 10, 41); font-weight: bold;">Perso</span>nal details </h2>
+       
+                <div style="display: flex; gap: 200px; align-items: flex-end; margin-left: 30px;">
+                    <div style="display: flex; gap: 200px;">
+                        <input type="text" placeholder="First Name" style="border: 2px solid rgb(10, 10, 41); border-radius: 5px;">
+                        <input type="text" placeholder="Middle Name" style="border: 2px solid rgb(10, 10, 41); border-radius: 5px;">
+                        <input type="text" placeholder="Surname" style="border: 2px solid rgb(10, 10, 41); border-radius: 5px;">
+                    </div>
+                </div>
+                
+        
+        <div class="upload-box" onclick="handleFileInput();">
+            <div class="cloud-arrow"></div>
+            <p class="upload-text">Upload picture here</p>
+            <input type="file" id="fileInput" style="display: none;">
+        </div>
+        <button class="upload-button" style="float: right; position: relative; top: 60px; left: -50px; font-size: 15px; padding: 1px 10px;">Upload File</button>
+
+        <h6 style="margin-top: 20px; margin-left: 30px;">Date of Birth</h6>
+
+        <div class="date-picker" style="display: flex; gap: 50px; align-items: center; margin-top: 20px; margin-left: 30px;">
+        
+            <select id="day" style="width: 60px; border: 2px solid rgb(10, 10, 41); border-radius: 5px;">
+                <option value="" disabled selected>Day</option>
+                <script>
+                    for (let day = 1; day <= 31; day++) {
+                        document.write(`<option value="${day}">${day}</option>`);
+                    }
+                </script>
+            </select>
+        
+            <select id="month" style="width: 100px; border: 2px solid rgb(10, 10, 41); border-radius: 5px;">
+                <option value="" disabled selected>Month</option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+        
+            <select id="year" style="width: 80px; border: 2px solid rgb(10, 10, 41); border-radius: 5px;">
+                <option value="" disabled selected>Year</option>
+                <script>
+                    const yearSelect = document.getElementById("year");
+                    const currentYear = new Date().getFullYear();
+        
+                    for (let year = currentYear - 120; year <= currentYear; year++) {
+                        const option = document.createElement("option");
+                        option.value = year;
+                        option.text = year;
+                        yearSelect.appendChild(option);
+                    }
+                </script>
+            </select>
+        </div>
+       
+       <br>
+       
+    
+       <div class="country-form" style="display: flex; gap: 100px; align-items: center; margin-left: 30px; margin-top: 20px;">
+
+        <label for="country-select" class="selected-flag" style="border: 0px solid rgb(10, 10, 41); border-radius: 0px; padding: 5px; position: relative;">
+            <select id="country-select" style="border: 2px solid rgb(10, 10, 41); border-radius: 5px; width: 230px; height: 29px; padding-left: 40px;">
+                <option value="" disabled selected>Nationality</option>
+            </select>
+            <span class="flag-icon" id="selected-flag" style="position: absolute; top: 15%; transform: translateY(-50%); left: 10px; width: 24px; height: 24px; background-size: cover;"></span>
+        </label>
+    
+        <label for="country-select-2" class="selected-flag" style="border: 0px solid rgb(10, 10, 41); border-radius: 0px; padding: 50px; position: relative;">
+            <select id="country-select-2"  style="border: 2px solid rgb(10, 10, 41); border-radius: 5px; width: 230px; height: 29px; padding-left: 40px; ">
+                <option value="" disabled selected>Place of birth</option>
+            </select>
+            <span class="flag-icon" id="selected-flag-2" style="position: absolute; top: 15%; transform: translateY(-50%); left: 10px; width: 24px; height: 24px; background-size: cover;"></span>
+        </label>
+    
+        <input type="text" placeholder="Current Residence" style="border: 2px solid rgb(10, 10, 41); border-radius: 5px; width: 230px;">
+    </div>
+    
+    
+    <script>
+        const countriesList = {
+            countries: {
+                us: { name: 'United States' },
+                ca: { name: 'Canada' },
+                gh: { name: 'Ghana' },
+                ch: { name: 'China' },
+                jp: { name: 'Japan' },
+                kr: { name: 'Korea' },
+                mx: { name: 'Mexico' },
+                uk: { name: 'United Kingdom' },
+                fr: { name: 'France' },
+                de: { name: 'Germany' },
+                au: { name: 'Australia' },
+                br: { name: 'Brazil' },
+                ru: { name: 'Russia' },
+                sa: { name: 'Saudi Arabia' },
+                in: { name: 'India' },
+                za: { name: 'South Africa' },
+                eg: { name: 'Egypt' },
+                th: { name: 'Thailand' },
+                it: { name: 'Italy' },
+                es: { name: 'Spain' },
+                ar: { name: 'Argentina' },
+                ng: { name: 'Nigeria' },
+                pk: { name: 'Pakistan' },
+                id: { name: 'Indonesia' },
+                tr: { name: 'Turkey' },
+                ir: { name: 'Iran' },
+                vn: { name: 'Vietnam' },
+                
+            }
+        };
+    
+        const countrySelect = document.getElementById('country-select');
+        const selectedFlag = document.getElementById('selected-flag');
+    
+        const countrySelect2 = document.getElementById('country-select-2');
+        const selectedFlag2 = document.getElementById('selected-flag-2');
+    
+        for (const countryCode in countriesList.countries) {
+            const country = countriesList.countries[countryCode];
+            
+            const option = document.createElement('option');
+            option.value = countryCode;
+            option.textContent = country.name;
+            
+            countrySelect.appendChild(option);
+            countrySelect2.appendChild(option.cloneNode(true)); 
+        }
+    
+      
+        countrySelect.addEventListener('change', function() {
+            const selectedCountryCode = this.value;
+            selectedFlag.innerHTML = `<span class="flag-icon flag-icon-${selectedCountryCode}"></span>`;
+        });
+    
+        countrySelect2.addEventListener('change', function() {
+            const selectedCountryCode = this.value;
+            selectedFlag2.innerHTML = `<span class="flag-icon flag-icon-${selectedCountryCode}"></span>`;
+        });
+    </script>
+    
+
+
+
+                <br>
+                <br>
+                
+                <div style="display: flex; gap: 200px; align-items: flex-end; margin-left: 30px;">
+                    <div style="display: flex; gap: 200px;">
+                        <input type="text" placeholder="Phone Number" style="border: 2px solid rgb(10, 10, 41); border-radius: 5px;">
+                        <input type="text" placeholder="E-mail" style="border: 2px solid rgb(10, 10, 41); border-radius: 5px;">
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center; color: black;">
+                        <label for="sex">Sex</label>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                        <input type="radio" id="prefer" name="gender" value="prefer">
+                        <label for="prefer">Prefer not to say</label>
+                    </div>
+                    
+                </div>
+                <br>
+                <h2 class="section-title" style="font-size: 25px; margin-left: 30px;">
+                    <span style="text-decoration: underline; text-decoration-color: rgb(10, 10, 41); font-weight: bold;">Parent</span>/ Guardian </h2>
+           
+                <h6 class="section-title" style="font-size: 20; margin-left: 30px;">
+                    <span style="text-decoration-color: rgb(10, 10, 41);">Relationship</span>
+                </h6>
+                    
+                <div style="display: flex; gap: 200px; align-items: flex-end; margin-left: 30px;">
+                    <div style="display: flex; gap: 200px;">
+                        <select style="width: 200px; border: 2px solid rgb(10, 10, 41); border-radius: 5px;">
+                            <option value="" disabled selected>Relationship</option>
+                            <option value="father">Father</option>
+                            <option value="mother">Mother</option>
+                            <option value="sibling">Sibling</option>
+                            <option value="guardian">Guardian</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+<br>
+<div style="display: flex; gap: 200px; align-items: flex-end; margin-left: 30px;">
+    <div style="display: flex; gap: 200px;">
+        <input type="text" placeholder="First Name" style="border: 2px solid rgb(10, 10, 41); border-radius: 5px;">
+        <input type="text" placeholder="Middle Name" style="border: 2px solid rgb(10, 10, 41); border-radius: 5px;">
+        <input type="text" placeholder="Surname" style="border: 2px solid rgb(10, 10, 41); border-radius: 5px;">
+    </div>
+</div>
+<br>
+<div class="form-section">
+    <h2 class="section-title" style="font-size: 25px; margin-left: 30px;">
+        <span style="text-decoration: underline; text-decoration-color: rgb(10, 10, 41); font-weight: bold;">Progra</span>m </h2>
+        <div style="display: flex; gap: 200px; align-items: flex-end; margin-left: 30px;">
+            <div style="display: flex; gap: 200px;">
+                <select style="width: 200px; border: 2px solid rgb(10, 10, 41); border-radius: 5px;">
+                    <option value="" disabled selected>Program</option>
+                    <option value="BTech Computer Science">BTech Computer Science</option>
+                    <option value="Bsc Business Information System">Bsc Business Information System</option>
+                    <option value="Bsc Information Technlogy">Bsc Information Technlogy</option>
+                    <option value="BTech Purchasing and Supply Science">BTech Purchasing and Supply Science</option>
+                    <option value="BTech Food Technology">BTech Food Technology</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div style="display: flex; gap: 200px; align-items: flex-end; margin-left: 30px;">
+        <div style="display: flex; gap: 200px;">
+            <select style="width: 200px; border: 2px solid rgb(10, 10, 41); border-radius: 5px;">
+                <option value="" disabled selected>Stream</option>
+                <option value="Morning">Morning</option>
+                <option value="Evening">Evening</option>
+                <option value="Weekend">Weekend</option>
+               
+            </select>
+        </div>
+    </div>
+    <br>
+    <div style="display: flex; gap: 200px; align-items: flex-end; margin-left: 30px;">
+        <div style="display: flex; gap: 200px;">
+            <select style="width: 200px; border: 2px solid rgb(10, 10, 41); border-radius: 5px;">
+                <option value="" disabled selected>Entry Level</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="300">300</option>
+                <option value="400">400</option>
+               
+            </select>
+        </div>
+    </div>
+    <br>
+    <div style="display: flex; gap: 200px; align-items: flex-end; margin-left: 30px;">
+        <div style="display: flex; gap: 200px;">
+            <select style="width: 200px; border: 2px solid rgb(10, 10, 41); border-radius: 5px;">
+                <option value="" disabled selected>Hall</option>
+                <option value="Renold Okai Hall">Renold Okai Hall</option>
+                <option value="Oti Boateng Hall">Oti Boateng Hall</option>
+                <option value="Animal Kindom Hall">Animal Kindom Hall</option>
+                <option value="Gladiators Hall">Gladiators Hall</option>
+               
+            </select>
+        </div>
+    </div>
+    <br>
+    <button style="background-color: rgb(10, 10, 41); color: white; border: none;top: 60px; size:20 5px;margin-left: 70px; border-radius: 5px; padding: 5px 25px;margin-bottom: 30px;  cursor: pointer;">Submit</button>
+    </body>
+    <script src="bootstrap-5.3.1-dist/js/bootstrap.js"></script>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.full.min.js"></script>
