@@ -1,0 +1,22 @@
+.registration-form {
+    position: relative; 
+}
+
+.registration-form::before {
+    content: "";
+    background-image: url('Img/KTULOGO.png');
+    background-size: 600px 600px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; 
+}
+.country-form {
+    display: inline-block;
+    margin-left: 20px;
+}

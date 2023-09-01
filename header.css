@@ -1,0 +1,47 @@
+body {
+    margin: 50;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    background-color: rgb(10, 10, 41);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 10px;
+}
+
+.logo {
+    height: 100%; 
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 15px;
+    font-weight: normal;
+    margin-left: 30px;
+}
+
+.subtitle {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.join-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+.container {
+    display: flex;
+    gap: 200px;
+    align-items: flex-end;
+    margin-left: 30px;
+}
+
+.name-inputs {
+    display: flex;
+    gap: 200px;
+}
